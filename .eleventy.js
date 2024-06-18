@@ -1,8 +1,11 @@
-export default function () {
+const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite")
+
+module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(EleventyVitePlugin);
+    eleventyConfig.addPassthroughCopy('src/resources');
     return {
         dir: {
-            input: 'src',
-            output: 'public',
+            input: 'src/views',
             includes: 'includes',
             layouts: 'layouts',
             data: 'data',
@@ -10,7 +13,6 @@ export default function () {
         dataTemplateEngine: 'njk',
         markdownTemplateEngine: false,
         htmlTemplateEngine: 'njk',
-        passthroughFileCopy: true,
         templateFormats: ['md', 'njk'],
     };
 }

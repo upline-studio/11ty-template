@@ -11,7 +11,8 @@ async function transformTs(content) {
 
 function exec(content) {
     const ctx = {
-        module: {}
+        module: {},
+        require: require
     }
     vm.createContext(ctx)
     vm.runInContext(content, ctx);

@@ -2,7 +2,6 @@ const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite")
 const {transform} = require('esbuild');
 const vm = require('node:vm');
 
-
 async function transformTs(content) {
     return await transform(content, {
         format: 'cjs',
@@ -20,7 +19,9 @@ function exec(content) {
 }
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPlugin(EleventyVitePlugin);
+    eleventyConfig.addPlugin(EleventyVitePlugin, {
+        viteOptions: {}
+    });
     eleventyConfig.addPassthroughCopy('src/resources');
     eleventyConfig.addDataExtension("ts", async (fileContent) => {
         const transformResult =  await transformTs(fileContent);

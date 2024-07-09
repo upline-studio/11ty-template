@@ -54,10 +54,12 @@ async function makeSvg(dir) {
     }
 
 
-    const {result} = await spriter.compileAsync();
-    const svgFile = result.symbol.sprite;
+    const {result, data} = await spriter.compileAsync();
 
-    return svgFile.contents
+    return {
+        content: result.symbol.sprite.contents,
+        icons: data.symbol.shapes.map((shape) => shape.name)
+    }
 }
 
 
@@ -67,8 +69,11 @@ const spriteDeclaration = {}
 
 for (const dir of dirs) {
     const svg = await makeSvg(dir)
-    spriteDeclaration[path.basename(dir)] = createHash('md5').update(svg).digest('hex')
-    await fs.writeFile(path.join(OUTPUT_DIR, path.basename(dir) + '.svg'), svg);
+    spriteDeclaration[path.basename(dir)] = {
+        hash: createHash('md5').update(svg.content).digest('hex'),
+        icons: svg.icons
+    }
+    await fs.writeFile(path.join(OUTPUT_DIR, path.basename(dir) + '.svg'), svg.content);
 }
 
 await fs.writeFile(path.join(OUTPUT_DIR,'sprite.json'), JSON.stringify(spriteDeclaration, null, 2));

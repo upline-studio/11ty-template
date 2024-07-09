@@ -1,5 +1,3 @@
-{% macro svg(type, name, width, height) %}
-    <svg class="base-icon base-icon_type_{{ type }}" width="{{ width }}" height="{{ height }}">
-        <use xlink:href="/sprites/{{ type }}.svg#{{ name }}"></use>
-    </svg>
+{% macro svg(type, name, width, height, class) %}
+    {% svgIcon type, name, 'class="base-icon ' ~ class ~ '" width="' ~ width ~ '" height="' ~ height ~ '"' %}
 {% endmacro %}

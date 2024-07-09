@@ -2,5 +2,9 @@
 permalink: "/"
 layout: "base.njk"
 ---
+{% import "forms.njk" as forms %}
 
 <h1>Test</h1>
+
+
+{{ forms.field('login', 'login', forms.input('login', 'Login', '', 'email')) }}

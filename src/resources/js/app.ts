@@ -1,1 +1,3 @@
-console.log('Hello, world!');
+const data = { a: 123 };
+
+console.log(data?.a);

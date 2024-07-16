@@ -2,6 +2,7 @@ const vm = require('node:vm');
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
 const { transform } = require('esbuild');
 const svgIcon = require('./11ty/svgIcon.js');
+const viteConfig = require('./vite.config.cjs');
 
 async function transformTs(content) {
   return await transform(content, {
@@ -23,7 +24,7 @@ function exec(content) {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyVitePlugin, {
-    viteOptions: {},
+    viteOptions: viteConfig,
   });
   eleventyConfig.addShortcode('svgIcon', svgIcon);
   eleventyConfig.addPassthroughCopy('src/resources');

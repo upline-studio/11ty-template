@@ -9,7 +9,7 @@
     /* Bundler mode */
     "moduleResolution": "node",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/resources/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,

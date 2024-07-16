@@ -1,5 +1,15 @@
 # Сборка
 
+## Копирование шаблона и первый запуск
+
+```bash
+npx degit upline-studio/11ty-template NAME_OF_YOUR_PROJECT
+cd NAME_OF_YOUR_PROJECT
+npm i
+npm run build:sprite
+npm run start
+```
+
 Запуск:
 
 ```bash

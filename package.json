@@ -9,7 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "prepare": "husky",
+    "lint:eslint": "npx eslint .",
+    "lint:stylelint": "npx stylelint \"src/**/*.{scss,css}\"",
+    "lint": "npm run lint:eslint && npm run lint:stylelint"
   },
   "dependencies": {
     "svg-sprite": "^2.0.4"
@@ -18,8 +22,10 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-vite": "^4.0.0",
     "@antfu/eslint-config": "^2.22.0",
+    "@up-line/stylelint-config": "^2.0.0",
     "esbuild": "^0.23.0",
     "eslint-plugin-format": "^0.1.2",
+    "husky": "^9.0.11",
     "typescript": "^5.5.3",
     "vite": "^5.3.3"
   },

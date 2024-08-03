@@ -30,8 +30,5 @@
     "sass": "^1.77.8",
     "typescript": "^5.5.3",
     "vite": "^5.3.3"
-  },
-  "overrides": {
-    "@typescript-eslint/eslint-plugin": "8.0.0-alpha.42"
   }
 }

@@ -28,7 +28,7 @@ module.exports = function (type, name, attrs) {
   if (error) {
     return error;
   }
-  return `<svg class="base-icon" ${attrs}>`
+  return `<svg ${attrs}>`
     + `<use xlink:href="/sprites/${type}.svg#${name}"></use>`
     + `</svg>`;
 };

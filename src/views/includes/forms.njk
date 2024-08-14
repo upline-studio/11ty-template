@@ -1,14 +1,17 @@
 {% macro input(name, value, type, id, html_attrs) %}
-    <input name="{{ name }}" {{  html_attrs }} {% if id %}id="{{ id }}"{% endif %}
-           id="{{ name }}"
-           value="{{ value }}"
-           type="{{ type }}"
-    />
+  <input
+    name="{{ name }}"
+    {{ html_attrs }}
+    {% if id %}
+      id="{{ id }}"
+    {% endif %}
+    value="{{ value }}"
+    type="{{ type }}"
+  />
 {% endmacro %}
-
 {% macro field(id, label, slot) %}
-    <div>
-        <label for="{{ id }}">{{ label }}</label>
-        {{ slot }}
-    </div>
+  <div>
+    <label for="{{ id }}">{{ label }}</label>
+    {{ slot }}
+  </div>
 {% endmacro %}

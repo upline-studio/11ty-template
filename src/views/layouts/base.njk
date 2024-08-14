@@ -1,24 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <title>{{ title }}</title>
     <script src="src/resources/js/app.ts" type="module"></script>
-    <link href="src/resources/scss/app.scss" rel="stylesheet">
-</head>
-<body>
+    <link href="src/resources/scss/app.scss" rel="stylesheet" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
     </header>
-    <main>
-        {{ content | safe }}
-    </main>
+    <main>{{ content | safe }}</main>
     <footer>
-        <p>&copy; 2020</p>
+      <p>&copy; 2020</p>
     </footer>
-</body>
+  </body>
 </html>

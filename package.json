@@ -1,5 +1,6 @@
 {
   "name": "upline-studio-11ty-template",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -20,8 +21,8 @@
     "svg-sprite": "^2.0.4"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-vite": "^4.0.0",
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-vite": "^5.0.0",
     "@antfu/eslint-config": "^2.22.0",
     "@up-line/stylelint-config": "^2.0.0",
     "esbuild": "^0.23.0",

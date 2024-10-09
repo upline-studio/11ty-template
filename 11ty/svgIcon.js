@@ -1,4 +1,4 @@
-const fs = require('node:fs');
+import fs from 'node:fs';
 
 const SPRITE_FILE = 'public/sprites/sprite.json';
 
@@ -23,7 +23,7 @@ function checkIcon(type, name) {
   return false;
 }
 
-module.exports = function (type, name, attrs) {
+export default function (type, name, attrs) {
   const error = checkIcon(type, name);
   if (error) {
     return error;

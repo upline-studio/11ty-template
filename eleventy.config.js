@@ -1,8 +1,8 @@
-const vm = require('node:vm');
-const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
-const { transform } = require('esbuild');
-const svgIcon = require('./11ty/svgIcon.js');
-const viteConfig = require('./vite.config.cjs');
+import vm from 'node:vm';
+import EleventyVitePlugin from '@11ty/eleventy-plugin-vite';
+import { transform } from 'esbuild';
+import svgIcon from './11ty/svgIcon.js';
+import viteConfig from './vite.config.js';
 
 async function transformTs(content) {
   return await transform(content, {
@@ -14,7 +14,6 @@ async function transformTs(content) {
 function exec(content) {
   const ctx = {
     module: {},
-    require,
   };
 
   vm.createContext(ctx);
@@ -22,7 +21,7 @@ function exec(content) {
   return ctx.module.exports;
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     viteOptions: viteConfig,
   });

@@ -1,0 +1,31 @@
+---
+permalink: "/examples"
+layout: "base.njk"
+---
+
+{% import "forms.njk" as forms %}
+{% import "sprite.njk" as sprite %}
+
+<section>
+  <h2>Пример вывода массива в цикле</h2>
+  <ol>
+    {% for link in navigation.links %}
+      <li>
+        <a href="{{ link.url }}"> {{ link.name }} </a>
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+<section>
+  <h2>Пример вывода иконки</h2>
+  {{ sprite.svg('main', 'user', 20, 20, 'base-icon') }}
+</section>
+<section>
+  <form>
+    <fieldset>
+      <legend><h2>Пример вывода формы регистрации</h2></legend>
+      {{ forms.fields(form.registration) }}
+      <button type="submit">submit</button>
+    </fieldset>
+  </form>
+</section>

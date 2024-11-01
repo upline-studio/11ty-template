@@ -5,7 +5,11 @@ type Link = {
 
 export const links: Link[] = [
   {
-    url: 'str',
-    name: 'str',
+    url: '/',
+    name: 'Home',
+  },
+  {
+    url: '/examples',
+    name: 'Examples',
   },
 ];

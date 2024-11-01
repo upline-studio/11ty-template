@@ -3,12 +3,8 @@ permalink: "/"
 layout: "base.njk"
 ---
 
-{% import "forms.njk" as forms %}
-{% import "sprite.njk" as sprite %}
-
 <h1>Test</h1>
-{{ navigation.links[0].name }}
-{{ sprite.svg('main', 'user', 200, 200) }}
-{{ sprite.svg('main', 'user3', 200, 200) }}
-
-{{ forms.field('login', 'login', forms.input('login', 'Login', '', 'email')) }}
+<p>
+  Для просмотра примеров компонентов перейдите на страницу
+  <a href="/examples">Examples</a>
+</p>

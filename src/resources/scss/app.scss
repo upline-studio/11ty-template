@@ -1,6 +1,8 @@
+@import 'base/base-field';
+
 body {
   margin: 0;
-  padding: 0;
+  padding: 40px;
   text-align: center;
   background: url('@/images/bg.svg') repeat center center fixed;
 }

@@ -8,10 +8,10 @@
     {% endfor %}
   />
 {% endmacro %}
-{% macro field(type, label, value, state, error, input_attrs) %}
+{% macro field(type, label, value, state, message, input_attrs) %}
   <label
     class="base-field {% if state %}base-field_{{ state }}{% endif %}"
-    {% if error %}data-error="{{ error }}"{% endif %}
+    {% if message %}data-message="{{ message }}"{% endif %}
   >
     {{ input(value, type, input_attrs) }}
     <span class="base-field__label">{{ label }}</span>
@@ -19,6 +19,6 @@
 {% endmacro %}
 {% macro fields(items) %}
   {% for item in items %}
-    {{ field(item.type, item.label, item.value, item.state, item.error, item.attrs) }}
+    {{ field(item.type, item.label, item.value, item.state, item.message, item.attrs) }}
   {% endfor %}
 {% endmacro %}

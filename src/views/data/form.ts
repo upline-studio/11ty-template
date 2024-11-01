@@ -3,7 +3,7 @@ type Field = {
   label: string
   value?: string | number
   state?: 'invalid' | 'success'
-  error?: string
+  message?: string
   attrs?: Record<string, string>
 };
 
@@ -19,23 +19,28 @@ export const registration: Field[] = [
     label: 'Email',
     state: 'success',
     value: 'test@test.test',
+    message: 'success message',
   },
   {
     type: 'password',
     label: 'Password',
     attrs: { required: '' },
     state: 'invalid',
-    error: 'empty field',
+    message: 'error message',
+    value: 'password',
   },
   {
     type: 'password',
     label: 'Confirm Password',
+    state: 'invalid',
+    value: 'pass',
     attrs: { required: '' },
   },
   {
     type: 'number',
     label: 'Age',
     attrs: { disabled: '' },
+    message: 'message',
   },
   {
     type: 'text',

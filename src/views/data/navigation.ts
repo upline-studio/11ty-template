@@ -9,7 +9,7 @@ export const links: Link[] = [
     name: 'Home',
   },
   {
-    url: '/examples',
-    name: 'Examples',
+    url: '/articles',
+    name: 'Articles',
   },
 ];

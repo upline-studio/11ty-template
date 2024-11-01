@@ -3,8 +3,37 @@ permalink: "/"
 layout: "base.njk"
 ---
 
-<h1>Test</h1>
-<p>
-  Для просмотра примеров компонентов перейдите на страницу
-  <a href="/examples">Examples</a>
-</p>
+{% import "forms.njk" as forms %}
+{% import "sprite.njk" as sprite %}
+{% import "image.njk" as image %}
+
+<section>
+  <h2>Пример вывода массива в цикле</h2>
+  <ol>
+    {% for link in navigation.links %}
+      <li>
+        <a href="{{ link.url }}"> {{ link.name }} </a>
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+<section>
+  <h2>Пример вывода иконки</h2>
+  {{ sprite.svg('main', 'user', 20, 20, 'class-for-icon') }}
+</section>
+<section>
+  <h2>Пример вывода формы</h2>
+  <form>
+    <fieldset>
+      <legend>Форма регистрации</legend>
+      {{ forms.fields(form.registration) }}
+      <button type="submit">Зарегистрироваться</button>
+    </fieldset>
+  </form>
+</section>
+<section>
+  <h2>Пример вывода банера</h2>
+  {{ image.figure(banner.figure) }}
+  <h2>Пример вывода изображения</h2>
+  {{ image.picture(banner.picture) }}
+</section>

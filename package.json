@@ -18,7 +18,8 @@
     "lint": "npm run lint:eslint && npm run lint:stylelint"
   },
   "dependencies": {
-    "svg-sprite": "^2.0.4"
+    "svg-sprite": "^2.0.4",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

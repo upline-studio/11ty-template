@@ -10,7 +10,7 @@
 {% endmacro %}
 {% macro field(type, label, value, state, message, input_attrs) %}
   <label
-    class="base-field {% if state %}base-field_{{ state }}{% endif %}"
+    class="base-field {% if state %}base-field_state_{{ state }}{% endif %}"
     {% if message %}data-message="{{ message }}"{% endif %}
   >
     {{ input(value, type, input_attrs) }}

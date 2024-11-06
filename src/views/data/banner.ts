@@ -1,6 +1,6 @@
 type Picture = {
   src: string
-  type: {
+  type?: {
     webp?: {
       desktop: string
       mobile: string

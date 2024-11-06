@@ -38,10 +38,11 @@ layout: "base.njk"
   <h2>Пример вывода изображения</h2>
   {{ image.picture(banner.picture) }}
 </section>
-
-<h2>Пример вывода карусели</h2>
-{% call carousel.swiper() %}
-  {% for slide in collection.imageSlides %}
-    {{ carousel.imageSlide(slide.name, slide.image, slide.url) }}
-  {% endfor %}
-{% endcall %}
+<section>
+  <h2>Пример вывода карусели</h2>
+  {% call carousel.swiper() %}
+    {% for slide in collection.imageSlides %}
+      {{ carousel.imageSlide(slide.name, slide.image, slide.url) }}
+    {% endfor %}
+  {% endcall %}
+</section>

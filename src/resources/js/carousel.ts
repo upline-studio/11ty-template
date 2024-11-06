@@ -1,6 +1,6 @@
 import type { SwiperOptions } from 'swiper/types';
-import { Navigation, Pagination } from 'swiper/types/modules';
 import { initSwiper } from '@/js/swiper.ts';
+import { Navigation, Pagination } from 'swiper/modules';
 
 const SWIPER_OPTIONS: Record<string, SwiperOptions> = {
   default: {

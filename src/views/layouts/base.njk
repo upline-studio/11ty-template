@@ -7,17 +7,8 @@
     <link href="src/resources/scss/app.scss" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-    </header>
+    {% include 'blocks/header.njk' %}
     <main>{{ content | safe }}</main>
-    <footer>
-      <p>&copy; 2020</p>
-    </footer>
+    {% include 'blocks/footer.njk' %}
   </body>
 </html>

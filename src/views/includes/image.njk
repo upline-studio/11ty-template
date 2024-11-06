@@ -1,0 +1,41 @@
+{% macro picture(banner, class, maxWidth = '550px', minWidth = '551px') %}
+  <picture {% if class %}class="{{ class }}"{% endif %}>
+    {% if banner.type.webp %}
+      <source
+        media="(max-width: {{ maxWidth }})"
+        srcset="{{ banner.type.webp.mobile }}"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: {{ minWidth }})"
+        srcset="{{ banner.type.webp.desktop }}"
+        type="image/webp"
+      />
+    {% endif %}
+    {% if banner.type.jpeg %}
+      <source
+        media="(max-width: {{ maxWidth }})"
+        srcset="{{ banner.type.jpeg.mobile }}"
+        type="image/jpeg"
+      />
+      <source
+        media="(min-width: {{ minWidth }})"
+        srcset="{{ banner.type.jpeg.desktop }}"
+        type="image/jpeg"
+      />
+    {% endif %}
+    <img
+      src="{{ banner.src }}"
+      loading="lazy"
+      width="{{ banner.width }}"
+      height="{{ banner.height }}"
+      alt="{{ banner.alt }}"
+    />
+  </picture>
+{% endmacro %}
+{% macro figure(banner, class) %}
+  <figure {% if class %}class="{{ class }}"{% endif %}>
+    {{ picture(banner.picture) }}
+    <figcapture>{{ banner.title }}</figcapture>
+  </figure>
+{% endmacro %}

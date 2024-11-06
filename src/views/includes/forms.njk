@@ -1,17 +1,24 @@
-{% macro input(name, value, type, id, html_attrs) %}
+{% macro input(value, type, html_attrs) %}
   <input
-    name="{{ name }}"
-    {{ html_attrs }}
-    {% if id %}
-      id="{{ id }}"
-    {% endif %}
     value="{{ value }}"
     type="{{ type }}"
+    placeholder=" "
+    {% for name, val in html_attrs %}
+      {{ name }}="{{ val }}"
+    {% endfor %}
   />
 {% endmacro %}
-{% macro field(id, label, slot) %}
-  <div>
-    <label for="{{ id }}">{{ label }}</label>
-    {{ slot }}
-  </div>
+{% macro field(type, label, value, state, message, input_attrs) %}
+  <label
+    class="base-field {% if state %}base-field_state_{{ state }}{% endif %}"
+    {% if message %}data-message="{{ message }}"{% endif %}
+  >
+    {{ input(value, type, input_attrs) }}
+    <span class="base-field__label">{{ label }}</span>
+  </label>
+{% endmacro %}
+{% macro fields(items) %}
+  {% for item in items %}
+    {{ field(item.type, item.label, item.value, item.state, item.message, item.attrs) }}
+  {% endfor %}
 {% endmacro %}

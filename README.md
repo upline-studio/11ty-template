@@ -87,3 +87,47 @@ export const nameOfVariable: NameOfType = {
 пагинацию.
 
 `carousel.imageSlide` — вспомогательный макрос для добавления отдельных слайдов в карусель.
+
+## Работа с полями формы
+
+Макрос `forms.fields` предназначен для создания формы с динамическим выводом полей. Он упрощает построение форм с
+различными типами полей, позволяет задать их состояние и отображать сообщения валидации.
+
+### Пример использования
+
+Сначала создайте массив полей, где каждому полю соответствуют его параметры, такие как тип, имя поля, значение и
+атрибуты.
+
+```ts
+type Field = {
+  type: 'text' | 'number' | 'email' | 'password'
+  label: string
+  value?: string | number
+  state?: 'invalid' | 'success'
+  message?: string
+  attrs?: Record<string, string>
+};
+
+export const registration: Field[] = [
+  {
+    type: 'text',
+    label: 'Name',
+    value: 'test name',
+  },
+  {
+    type: 'email',
+    label: 'Email',
+    state: 'success',
+    value: 'test@test.test',
+    message: 'success message',
+  }
+];
+```
+
+Используйте макрос `forms.fields`
+
+```njk
+{% import "forms.njk" as forms %}
+
+{{ forms.fields(form.registration) }}
+```

@@ -1,6 +1,6 @@
+import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { createHash } from 'node:crypto';
 import SVGSpriter from 'svg-sprite';
 
 const SOURCE_DIR = 'src/resources/icons';

@@ -1,5 +1,4 @@
 import antfu, { parserPlain } from '@antfu/eslint-config';
-import node from 'eslint-plugin-n';
 
 export default antfu(
   {
@@ -18,20 +17,15 @@ export default antfu(
 
   {
     rules: {
-      'node/exports-style': ['error', 'module.exports'],
-    },
-    files: ['11ty/*'],
-  },
-
-  {
-    rules: {
       'style/semi': ['error', 'always'],
       'no-console': ['warn'],
     },
   },
   {
-    ...node.configs['flat/recommended-module'],
     files: ['_dev/*.mjs'],
+    rules: {
+      'antfu/no-top-level-await': 'off',
+    },
   },
   {
     files: ['**/*.njk'],

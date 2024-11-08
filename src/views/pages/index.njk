@@ -6,6 +6,7 @@ layout: "base.njk"
 {% import "forms.njk" as forms %}
 {% import "sprite.njk" as sprite %}
 {% import "image.njk" as image %}
+{% import "carousel.njk" as carousel %}
 
 <section>
   <h2>Пример вывода массива в цикле</h2>
@@ -36,4 +37,12 @@ layout: "base.njk"
   {{ image.figure(banner.figure) }}
   <h2>Пример вывода изображения</h2>
   {{ image.picture(banner.picture) }}
+</section>
+<section>
+  <h2>Пример вывода карусели</h2>
+  {% call carousel.swiper() %}
+    {% for slide in collection.imageSlides %}
+      {{ carousel.imageSlide(slide.name, slide.image, slide.url) }}
+    {% endfor %}
+  {% endcall %}
 </section>

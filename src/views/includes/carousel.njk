@@ -1,0 +1,21 @@
+{% macro swiper(name = 'default') %}
+  <section class="carousel js-carousel" data-carousel-name="{{ name }}">
+    <div class="swiper">
+      <div class="swiper-wrapper">{{ caller() }}</div>
+      <div class="swiper-pagination"></div>
+      <button class="swiper-button-prev" aria-label="Предыдущий слайд"></button>
+      <button class="swiper-button-next" aria-label="Следующий слайд"></button>
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro imageSlide(name, image, url) %}
+  <div class="swiper-slide">
+    <a href="{{ url }}">
+      <figure>
+        <img src="{{ image }}" alt="{{ name }}" />
+        <figcaption>{{ name }}</figcaption>
+      </figure>
+    </a>
+  </div>
+{% endmacro %}

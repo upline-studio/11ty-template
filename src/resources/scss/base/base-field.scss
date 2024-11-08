@@ -1,12 +1,12 @@
 .base-field {
   --base-field-border-color: grey;
   --base-field-active-color: var(--primary-color);
-  --base-field-background-color: var(--light-color);
+  --base-field-background-color: var(--background-color);
   --base-field-disabled-color: #e0e0e0;
   --base-field-placeholder-color: grey;
   --base-field-error-color: var(--accent-color);
   --base-field-success-color: var(--positive-color);
-  --base-field-font-color: var(--dark-color);
+  --base-field-font-color: var(--text-color);
 
   position: relative;
   display: flex;

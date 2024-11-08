@@ -1,9 +1,11 @@
+@import 'common/variables';
 @import 'vendor/swiper';
 @import 'base/base-field';
 
 body {
   margin: 0;
   padding: 0;
+  color: var(--dark-color);
   text-align: center;
   background: url('@/images/bg.svg') repeat center center fixed;
 }

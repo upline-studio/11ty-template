@@ -8,7 +8,7 @@ layout: "base.njk"
 {% import "image.njk" as image %}
 {% import "carousel.njk" as carousel %}
 
-<section>
+<section class="base-container">
   <h2>Пример вывода массива в цикле</h2>
   <ol>
     {% for link in navigation.links %}
@@ -18,11 +18,11 @@ layout: "base.njk"
     {% endfor %}
   </ol>
 </section>
-<section>
+<section class="base-container">
   <h2>Пример вывода иконки</h2>
   {{ sprite.svg('main', 'user', 20, 20, 'class-for-icon') }}
 </section>
-<section>
+<section class="base-container">
   <h2>Пример вывода формы</h2>
   <form>
     <fieldset>
@@ -32,13 +32,13 @@ layout: "base.njk"
     </fieldset>
   </form>
 </section>
-<section>
+<section class="base-container">
   <h2>Пример вывода банера</h2>
   {{ image.figure(banner.figure) }}
   <h2>Пример вывода изображения</h2>
   {{ image.picture(banner.picture) }}
 </section>
-<section>
+<section class="base-container">
   <h2>Пример вывода карусели</h2>
   {% call carousel.swiper() %}
     {% for slide in collection.imageSlides %}
